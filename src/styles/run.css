@@ -1,0 +1,271 @@
+/* Main form container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
+}
+
+/* Form title */
+.container h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007acc;
+}
+
+/* Labels for inputs */
+.container label {
+  display: block;
+  margin-top: 20px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Row for action buttons (Submit, Reset, etc.) */
+.button-row {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Styling for each button inside the row */
+.button-row button {
+  background: linear-gradient(135deg, #43a047, #2e7031);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-size: 1.08em;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(67, 160, 71, 0.13);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+/* Button hover animation */
+.button-row button:hover {
+  background: linear-gradient(135deg, #2e7031, #1b5e20);
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 24px rgba(67, 160, 71, 0.18);
+}
+
+/* Button click effect */
+.button-row button:active {
+  background: linear-gradient(135deg, #43a047, #2e7031);
+  transform: scale(0.98);
+}
+
+/* Horizontal input row (used to align label/input/select side by side) */
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+/* Group input and label together */
+.input-group {
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+/* Label inside an input group */
+.input-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #007acc;
+  font-weight: 500;
+}
+
+/* Input styling */
+.input-group input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #b3d8f7;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+  background: #f7fbff;
+}
+
+/* Highlight input on focus */
+.input-group input:focus {
+  outline: none;
+  border-color: #007acc;
+  box-shadow: 0 0 5px rgba(0, 122, 204, 0.2);
+}
+
+/* Layout for input field next to select dropdown */
+.input-with-select {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Input inside input-with-select layout */
+.input-with-select input {
+  flex: 2;
+  margin: 0;
+}
+
+/* Styling for select dropdown (e.g., unit selector) */
+.unit-select {
+  flex: 1;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #b3d8f7;
+  border-radius: 6px;
+  background: #f7fbff;
+  color: #2cb35b;
+  transition: border-color 0.3s;
+  cursor: pointer;
+}
+
+/* Focus styles for dropdown */
+.unit-select:focus {
+  outline: none;
+  border-color: #007acc;
+  box-shadow: 0 0 5px rgba(0, 122, 204, 0.2);
+}
+
+/* Hover effect for select dropdown */
+.unit-select:hover {
+  border-color: #007acc;
+}
+
+/* Shows how many pictures are added (text display) */
+.picture-count-row {
+  margin-top: 10px;
+  margin-bottom: 18px;
+  text-align: right;
+  color: #005f99;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+/* Reset button design */
+.reset-btn {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a5a);
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(255, 107, 107, 0.2);
+  min-width: 70px;
+}
+
+/* Hover effect for reset button */
+.reset-btn:hover {
+  background: linear-gradient(135deg, #ff5252, #e53e3e);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(255, 107, 107, 0.3);
+}
+
+/* Reset button click effect */
+.reset-btn:active {
+  transform: scale(0.98);
+}
+
+/* Add System button styling */
+.add-system-btn {
+  margin-top: 12px;
+  background: linear-gradient(135deg, #43a047, #2e7031);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 122, 204, 0.2);
+  transition: background 0.3s ease;
+  width: 100%;
+}
+
+/* Add System hover effect */
+.add-system-btn:hover {
+  background: linear-gradient(135deg, #39b03b, #36b638);
+}
+
+/* Custom select styling inside the form */
+select#system {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #43a047;
+  background: #f7fff7;
+  color: #2e7031;
+  font-size: 15px;
+  min-width: 160px;
+  flex: 1;
+}
+
+/* Popup background overlay */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Modal content styling */
+.popup-content {
+  background: #fff;
+  padding: 30px 28px;
+  border-radius: 10px;
+  min-width: 320px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  position: relative;
+}
+
+/* Close (X) button inside popup */
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+/* Close button hover effect */
+.close-button:hover {
+  color: #4cd360;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .input-with-select {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .input-with-select input,
+  .unit-select {
+    width: 100%;
+  }
+
+  .input-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .reset-btn {
+    margin-top: 8px;
+  }
+}

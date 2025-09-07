@@ -1,0 +1,152 @@
+/* Basic reset and global body style */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6ffe6 0%, #a5d6a7 100%);
+}
+
+/* Full-page wrapper that holds the image and the form side-by-side */
+.login-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+/* Left side of the screen with background image */
+.image-side {
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 100vh;
+  background: url('https://www.simplygro.com/cdn/shop/products/natural-hydroponics-professional-nutrient-system-in-use-1_bb29d048-6f9b-4fd3-a25d-f712f695500f.jpg?v=1696725147&width=1946') no-repeat center center;
+  background-size: cover;
+}
+
+/* Right side that contains the login/signup form */
+.form-side {
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #e6ffe6 0%, #a5d6a7 100%);
+}
+
+/* Container for the login/signup box */
+.login-container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  text-align: center;
+}
+
+/* Heading inside the form */
+.login-container h2 {
+  margin-bottom: 24px;
+  color: var(--theme-main);
+}
+
+/* Labels for input fields */
+.login-container label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Text input fields */
+.login-container input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--theme-main);
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+/* Input focus effect */
+.login-container input:focus {
+  border-color: #43a047;
+  outline: none;
+  box-shadow: 0 0 5px rgba(67, 160, 71, 0.3);
+}
+
+/* Submit/login button styling */
+.login-container button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--theme-main), var(--theme-dark));
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+.login-container button:hover {
+  background: linear-gradient(135deg, var(--theme-dark), #1b5e20);
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4);
+}
+
+/* Forgot Password, Back to Login, and Signup button styling */
+.forgot-password-btn, .back-to-login-btn, .signup-btn {
+  margin-top: 15px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--theme-main), var(--theme-dark));
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover state for Forgot Password, Back to Login, and Signup buttons */
+.forgot-password-btn:hover, .back-to-login-btn:hover, .signup-btn:hover {
+  background: linear-gradient(135deg, var(--theme-dark), #1b5e20);
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4);
+}
+
+.back-to-login-btn:hover {
+  background: #43a047 !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4);
+}
+
+/* Responsive layout: stack image and form on smaller screens */
+@media (max-width: 900px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+
+  .image-side,
+  .form-side {
+    min-height: 40vh;
+    flex: none;
+    width: 100vw;
+  }
+
+  .form-side {
+    min-height: 60vh;
+  }
+}
+
+/* Theme colors */
+:root {
+  --theme-main: #43a047;
+  --theme-dark: #2e7031;
+  --theme-accent: #b36aff;
+}

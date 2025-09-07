@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;700&display=swap');
+
+/* Define color variables for the theme */
+:root {
+  --theme-main: #43a047; /* Agriculture green */
+  --theme-dark: #2e7031;
+  --theme-accent: #f9a825; /* yellow accent for green theme */
+}
+
+/* Set global font, layout, and background styling */
+body {
+  font-family: 'Inter', 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background: var(--theme-bg-gradient);
+  color: #000;
+  min-height: 100vh;
+  transition: background 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: bodyFadeIn 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Smooth fade-in animation for body */
+@keyframes bodyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Styling for all heading elements */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
+  color: #2e7031;
+  animation: titlePopIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Pop-in effect for headings */
+@keyframes titlePopIn {
+  0% { opacity: 0; transform: scale(0.95) translateY(20px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Top navigation bar styling */
+nav {
+  background-color: #ffffff;
+  padding: 34px 24px;
+  box-shadow: 0 8px 32px rgba(67, 160, 71, 0.08);
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  justify-content: center;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
+  animation: navSlideDown 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Slide down effect for nav on load */
+@keyframes navSlideDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hamburger menu for mobile navigation */
+.nav-hamburger {
+  position: absolute;
+  left: 24px;
+  top: 16px;
+  font-size: 2em;
+  cursor: pointer;
+  background: none;
+  border: none;
+  z-index: 101;
+  color: var(--theme-main);
+  transition: color 0.2s;
+}
+
+.nav-hamburger:hover {
+  color: var(--theme-dark);
+}
+
+/* Centers nav links horizontally */
+.nav-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Dropdown menu styling */
+.nav-dropdown {
+  position: absolute;
+  left: 24px;
+  top: 56px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.13);
+  min-width: 140px;
+  padding: 10px 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.2s;
+}
+
+/* Dropdown item button and link styles */
+.nav-dropdown button, .nav-dropdown a {
+  background: none;
+  border: none;
+  color: #2e7031;
+  text-align: left;
+  padding: 10px 18px;
+  font-size: 1em;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.nav-dropdown button:hover, .nav-dropdown a:hover {
+  background: #e6ffe6;
+  color: #43a047;
+}
+
+/* Make Logout button bold and add underline effect on hover */
+.nav-dropdown button.nav-dropdown-link {
+  font-weight: 700;
+  position: relative;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+}
+
+.nav-dropdown button.nav-dropdown-link::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #43a047, #f9a825);
+  transition: width 0.3s, left 0.3s;
+}
+
+.nav-dropdown button.nav-dropdown-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Navigation links styling */
+nav a {
+  text-decoration: none;
+  color: #000;
+  padding: 10px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Gradient underline animation on hover */
+nav a::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--theme-main), var(--theme-accent));
+  transition: width 0.3s, left 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Overlay background for popups */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Popup container styling */
+.popup-content {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  position: relative;
+  min-width: 320px;
+  max-width: 90%;
+  animation: slideUp 0.3s ease-out, popupAppear 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Fade in effect used for popups */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Slide up entry animation */
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Popup scaling animation */
+@keyframes popupAppear {
+  from { opacity: 0; transform: scale(0.95) translateY(30px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Close icon styling for popups */
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.close-button:hover {
+  color: var(--theme-main);
+}
+
+/* Paragraphs inside popups */
+.popup-content p {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Input fields inside popups */
+.popup-content input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border-color 0.3s;
+}
+
+/* Input focus style */
+.popup-content input:focus {
+  outline: none;
+  border-color: var(--theme-main);
+  box-shadow: 0 0 5px rgba(79, 209, 197, 0.3);
+}
+
+/* Aligns buttons or other elements to the right side of nav */
+.nav-right {
+  position: absolute;
+  right: 24px;
+  top: 16px;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+/* Styling for buttons on the right side of nav */
+.nav-right button {
+  background: linear-gradient(135deg, #43a047, #2e7031);
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(67, 160, 71, 0.3);
+  transition: background 0.3s ease;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.nav-right button:hover {
+  background: linear-gradient(135deg, #2e7031, #43a047);
+}
+
+/* Shared button styles across multiple components */
+.button-row button, .nav-right button, .add-system-btn {
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 6px 24px rgba(67, 160, 71, 0.13);
+  transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+  animation: buttonFadeIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Button entrance animation */
+@keyframes buttonFadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Style inputs and dropdowns */
+input, select {
+  font-family: 'Inter', 'Montserrat', sans-serif;
+  font-size: 1em;
+  transition: box-shadow 0.3s;
+}
+
+/* Add glow effect when focused */
+input:focus, select:focus {
+  box-shadow: 0 0 8px #b36aff33;
+}
+
+/* Add System button specific styles */
+.add-system-btn {
+  background: linear-gradient(135deg, #43a047, #2e7031);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 12px 24px;
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.13);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.add-system-btn:hover {
+  background: linear-gradient(135deg, #2e7031, #43a047);
+}

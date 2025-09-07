@@ -1,0 +1,176 @@
+/* Reset page styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0fff0 0%, #c8e6c9 100%);
+}
+
+/* Wrapper that contains both image and form */
+.reset-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+}
+
+/* Left side - Image */
+.image-side {
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 100vh;
+  background: url('https://www.simplygro.com/cdn/shop/products/natural-hydroponics-professional-nutrient-system-in-use-1_bb29d048-6f9b-4fd3-a25d-f712f695500f.jpg?v=1696725147&width=1946') no-repeat center center;
+  background-size: cover;
+}
+
+/* Right side - Form */
+.form-side {
+  flex: 1 1 50%;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f0fff0 0%, #c8e6c9 100%);
+}
+
+/* Reset box */
+.reset-container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 320px;
+  text-align: center;
+}
+
+/* Heading */
+.reset-step h2 {
+  margin-bottom: 24px;
+  color: var(--theme-main);
+  font-size: 1.8rem;
+}
+
+/* Description paragraph */
+.reset-step p {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 0.9rem;
+}
+
+/* Labels */
+.reset-step label {
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* Inputs */
+.reset-step input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--theme-main);
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.reset-step input:focus {
+  border-color: #43a047;
+  outline: none;
+  box-shadow: 0 0 5px rgba(67, 160, 71, 0.3);
+}
+
+.reset-step input:disabled {
+  background-color: #f8f9fa;
+  cursor: not-allowed;
+}
+
+/* Primary buttons */
+.reset-step button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, var(--theme-main), var(--theme-dark));
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.reset-step button:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--theme-dark), #1b5e20);
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4);
+}
+
+.reset-step button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Back button */
+.back-btn {
+  background: transparent !important;
+  color: var(--theme-main) !important;
+  border: 2px solid var(--theme-main) !important;
+  margin-top: 10px;
+}
+
+.back-btn:hover:not(:disabled) {
+  background: var(--theme-main) !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.4) !important;
+}
+
+/* Message styles */
+.message {
+  padding: 12px;
+  border-radius: 6px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.message.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.message.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+/* Responsive: stack on smaller screens */
+@media (max-width: 900px) {
+  .reset-wrapper {
+    flex-direction: column;
+  }
+  .image-side, .form-side {
+    min-height: 40vh;
+    flex: none;
+    width: 100vw;
+  }
+  .form-side {
+    min-height: 60vh;
+  }
+}
+
+/* Theme colors */
+:root {
+  --theme-main: #43a047;
+  --theme-dark: #2e7031;
+  --theme-accent: #b36aff;
+}

@@ -1,0 +1,184 @@
+/* Define the color theme for the profile section */
+:root {
+  --theme-main: #43a047; /* Main green color for the theme */
+  --theme-dark: #2e7031; /* Darker shade of green for accents */
+  --theme-accent: #b36aff; /* Accent color, a shade of lavender */
+}
+
+/* Main container that wraps the entire profile section */
+.profile-container {
+  max-width: 480px;
+  margin: 48px auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 122, 204, 0.10);
+  padding: 36px 32px 32px 32px;
+  min-height: 320px;
+}
+
+/* Card layout for displaying profile content centered */
+.profile-card {
+  text-align: center;
+}
+
+/* Profile name heading */
+.profile-card h2 {
+  color: var(--theme-main);
+  margin-bottom: 18px;
+  font-size: 2em;
+  font-weight: 700;
+}
+
+/* Box holding user details like name, email, etc. */
+.profile-info {
+  margin-top: 18px;
+  background: #fff;
+  border: 4px solid #e6ffe6;
+  color: #2e7031;
+  border-radius: 10px;
+  padding: 18px 0;
+  font-size: 1.1em;
+  box-shadow: 0 2px 8px rgba(0, 122, 204, 0.07);
+}
+
+/* Individual lines of info (like "Email:", "Username:", etc.) */
+.profile-info div {
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+/* Key label styling for profile info (e.g. "Name:") */
+.profile-info span {
+  color: var(--theme-main);
+  font-weight: 600;
+  margin-right: 8px;
+}
+
+/* Section for displaying and managing the profile photo */
+.profile-photo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+/* Actual profile picture styling */
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(179, 106, 255, 0.13);
+  border: 4px solid #e6ffe6;
+  background: #f7e8ff;
+  margin-bottom: 12px;
+  transition: opacity 0.3s;
+}
+
+/* Placeholder style for when no profile picture is uploaded */
+.profile-photo.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #eaf6ff 60%, #f7e8ff 100%);
+  box-shadow: 0 4px 16px rgba(179, 106, 255, 0.13);
+  border: 4px solid #e6ffe6;
+  margin-bottom: 12px;
+}
+
+/* Row of buttons under the photo (Upload, Remove) */
+.photo-btn-row {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+/* Shared styles for Upload and Remove buttons */
+.upload-photo-btn, .remove-photo-btn {
+  background: linear-gradient(135deg, #43a047, #007acc);
+  color: #fff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 122, 204, 0.10);
+  transition: background 0.3s, opacity 0.2s;
+  font-size: 1em;
+}
+
+/* Disabled state for buttons */
+.upload-photo-btn:disabled, .remove-photo-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Remove button gets a different color gradient to signal danger */
+.remove-photo-btn {
+  background: linear-gradient(135deg, #ff6a6a, #b36aff);
+}
+
+/* Section below the profile card for additional actions */
+.profile-actions {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #eaf6ff;
+}
+
+/* "Reset Password" button styling */
+.reset-password-btn {
+  background: linear-gradient(135deg, #ff9500, #ff6b35);
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: 'Montserrat', 'Inter', sans-serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(255, 149, 0, 0.20);
+  transition: all 0.3s ease;
+  font-size: 1em;
+  min-width: 160px;
+}
+
+/* Hover effect for reset password button */
+.reset-password-btn:hover {
+  background: linear-gradient(135deg, #ff8000, #ff5722);
+  box-shadow: 0 6px 20px rgba(255, 149, 0, 0.30);
+  transform: translateY(-2px);
+}
+
+/* Active click effect */
+.reset-password-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(255, 149, 0, 0.15);
+}
+
+/* Profile header styling */
+.profile-header {
+  color: #2e7031;
+}
+
+/* Profile actions button styling */
+.profile-actions button, .upload-photo-btn {
+  background: linear-gradient(135deg, #43a047 60%, #2e7031 100%);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  padding: 12px 24px;
+  box-shadow: 0 4px 12px rgba(67, 160, 71, 0.13);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Profile actions button hover effect */
+.profile-actions button:hover, .upload-photo-btn:hover {
+  background: linear-gradient(135deg, #2e7031, #43a047);
+}

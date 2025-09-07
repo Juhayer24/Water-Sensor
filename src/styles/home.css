@@ -1,0 +1,287 @@
+/* Agriculture green theme */
+:root {
+  --theme-main: #43a047;
+  --theme-dark: #2e7031;
+  --theme-accent: #b36aff;
+}
+
+body {
+  background: linear-gradient(135deg, #eaf6ff 0%, #e6ffe6 100%);
+}
+
+/* Container for the scrolling row of tech logos */
+.tech-logos-bar {
+  position: relative;
+  width: 100vw; /* Take full width of the viewport */
+  max-width: 100%;
+  overflow: hidden; /* Hide logos as they scroll outside the container */
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #f8fbff 0%, #e6ffe6 100%);
+  min-height: 70px; /* Ensures consistent height */
+}
+
+/* Inner track that holds and scrolls the logos horizontally */
+.tech-logos-track {
+  display: flex;
+  align-items: center;
+  gap: 200px; /* Space between logos */
+  width: calc(200%); /* Double the container width for seamless looping */
+  animation: scroll 20s linear infinite; /* Infinite horizontal scroll */
+}
+
+/* Individual logo styles */
+.logo {
+  width: 100px;
+  height: auto;
+  margin: 0 68px;
+  flex-shrink: 0; /* Prevent shrinking when space is tight */
+}
+
+/* Animation that moves the track to the left continuously */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Features Section - What this system does */
+.features-section {
+  padding: 60px 20px;
+  background: none;
+  margin: 40px 0;
+}
+
+.section-title {
+  text-align: center;
+  font-family: 'Montserrat', 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: var(--theme-main);
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #007acc, #00c6fb);
+  border-radius: 2px;
+}
+
+.features-container, .benefits-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.feature-card, .benefit-card {
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 340px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(67, 160, 71, 0.08);
+  padding: 24px 18px;
+  color: #43a047;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 122, 204, 0.1);
+  text-align: center;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 122, 204, 0.15);
+}
+
+.feature-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #eaf6ff 0%, #d6f0ff 100%);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.feature-icon svg {
+  stroke: #a5d6a7;
+}
+
+.feature-card h3 {
+  font-family: 'Montserrat', 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #43a047;
+  margin-bottom: 15px;
+}
+
+.feature-card p {
+  font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 1em;
+  color: #2e7031;
+  line-height: 1.6;
+}
+
+/* Benefits Section - Why use it */
+.benefits-section {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #e6ffe6 0%, #e6ffe6 100%);
+  border-radius: 18px;
+  margin: 40px 0;
+}
+
+.benefits-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.benefit-card {
+  flex: 1 1 0;
+  min-width: 220px;
+  max-width: 340px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(67, 198, 251, 0.08);
+  padding: 24px 18px;
+  color: #43a047;
+  font-weight: 600;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(0, 198, 251, 0.1);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 198, 251, 0.15);
+}
+
+.benefit-icon {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #e6f9ff 0%, #ccf4ff 100%);
+  border-radius: 50%;
+  margin: 0 auto 20px;
+}
+
+.benefit-icon svg {
+  stroke: #a5d6a7;
+}
+
+.benefit-card h3 {
+  font-family: 'Montserrat', 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+  font-weight: 600;
+  font-size: 1.3em;
+  color: #43a047;
+  margin-bottom: 15px;
+}
+
+.benefit-card p {
+  font-family: 'Inter', 'Poppins', 'Segoe UI', sans-serif;
+  font-size: 1em;
+  color: #2e7031;
+  line-height: 1.6;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .features-section, .benefits-section {
+    padding: 40px 15px;
+  }
+
+  .section-title {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+  }
+
+  .features-container, .benefits-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .feature-card, .benefit-card {
+    padding: 30px 20px;
+  }
+
+  .feature-icon, .benefit-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .feature-icon svg, .benefit-icon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 700px) {
+  .tech-logo {
+    height: 36px;
+    padding: 3px 6px;
+  }
+
+  .tech-logos-track {
+    gap: 32px; /* Reduce spacing between logos on small devices */
+  }
+}
+
+@media (max-width: 900px) {
+  .features-container, .benefits-container {
+    flex-wrap: wrap;
+  }
+  .feature-card, .benefit-card {
+    min-width: 180px;
+    max-width: 100%;
+  }
+}
+
+/* Animation for smooth entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.feature-card, .benefit-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Staggered animation delay */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+
+.benefit-card:nth-child(1) { animation-delay: 0.1s; }
+.benefit-card:nth-child(2) { animation-delay: 0.2s; }
+.benefit-card:nth-child(3) { animation-delay: 0.3s; }
