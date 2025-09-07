@@ -1,3 +1,5 @@
+Note: Everything is working as expected.
+The only step remaining for the next person is to configure the .env file by adding the appropriate email and password credentials. I’ve left these as comments since I cannot share my personal information. Other than that, the project should be ready to go.
 ## Requirements
 - **macOS** (or Linux/Windows with minor adjustments)
 - **Python 3.10+**
@@ -60,3 +62,4 @@ python app.py
 cd ~/Downloads/research-main
 npm start
 ```
+ 
